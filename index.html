@@ -5,38 +5,60 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Athlete Profile</title>
-  <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
   <header>
     <div class="profile">
+
         <div class="profile-top">
-
           <figure><img class="photo" src="./photos/cover_photo.jpg" alt="Garrett Comer"></figure>
-
           <div class="meta">
-            
             <h1>Garrett Comer</h1>
-
             <h2>Year</h2>
             <p>___</p>
-
             <h2>Major</h2>
             <p>___</p>
-
           </div>
         </div>
+
+        <div class="top-stats">
+          <h2>Notable Stats</h2>
+          <p>Blah</p>
+        </div>
+
         <div class="bio">
             <h2>Bio</h2>
             <p>Garrett Comer is a cross country athlete...</p>
         </div>
+
     </div>
   </header>
 
   <main id="main">
     <section id="meets" class="meets" aria-labelledby="meets-title">
+
+      <div
+          id="performance-panel"
+          class="panel"
+          role="region"
+          aria-labelledby="performance-title"
+          aria-live="polite"
+          tabindex="-1">
+
+          <div class="panel-header">
+            <div class="panel-main">
+              <h2 id="performance-title">Performance visualization</h2>
+            </div>
+          </div>
+
+          <div class="viz-area">
+            <canvas id="time-chart" role="img" aria-label="Line chart of race times over time"></canvas>
+          </div>
+        </div>
+
       <h2 id="meets-title">Meets</h2>
 
       <div id="meet-grid" class="meet-grid">
@@ -537,25 +559,6 @@
         </article>
 
       </div>
-
-      <div
-          id="performance-panel"
-          class="panel"
-          role="region"
-          aria-labelledby="performance-title"
-          aria-live="polite"
-          tabindex="-1">
-
-          <div class="panel-header">
-            <div class="panel-main">
-              <h2 id="performance-title">Performance visualization</h2>
-            </div>
-          </div>
-
-          <div class="viz-area">
-            <canvas id="time-chart" role="img" aria-label="Line chart of race times over time"></canvas>
-          </div>
-        </div>
     </section>
   </main>
 
