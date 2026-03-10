@@ -23,6 +23,26 @@
   }
 }
 
+body.dark-mode {
+  --bg-color: #0b1f3a;
+  --card-color: #13294b;
+  --text-color: #ffffff;
+  --accent-color: #c8a646;
+  --border-color: #4a5a73;
+  --button-text: #0b1f3a;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+body.light-mode {
+  --bg-color: #e9ecef;
+  --card-color: #ffffff;
+  --text-color: #0b1f3a;
+  --accent-color: #c8a646;
+  --border-color: #cfd6dd;
+  --button-text: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+}
+
 html {
   font-size: 16px;
 }
@@ -73,6 +93,8 @@ h2 {
   border: 2px solid var(--border-color);
   border-radius: 1rem;
   padding: 1rem;
+  margin: 1rem;
+  box-shadow: 0 4px 10px var(--shadow-color);
 }
 
 .sticky-header figure {
@@ -161,7 +183,6 @@ h2 {
   width: 100%;
   overflow: hidden;
   border-radius: 0.75rem;
-  border: 2px solid var(--border-color);
 }
 
 .spacer img {
@@ -171,9 +192,8 @@ h2 {
 }
 
 .open-panel {
-  border: 2px solid var(--accent-color);
   border-radius: 0.75rem;
-  padding: 0.75rem 1rem;
+  padding: 8px 16px;
   background-color: var(--text-color);
   color: var(--button-text);
   font-weight: bold;
@@ -200,6 +220,63 @@ h2 {
 
 .race-details p:last-child {
   margin-bottom: 0;
+}
+
+/* Light/dark Toggle (Used ChatGPT for instruction) */
+
+.theme-toggle {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 2000;
+
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.toggle-track {
+  position: relative;
+  width: 84px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: var(--card-color);
+  border: 2px solid var(--accent-color);
+  border-radius: 999px;
+  padding: 0 10px;
+  box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+.toggle-option {
+  position: relative;
+  z-index: 2;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.toggle-thumb {
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: var(--text-color);
+  transition: transform 0.25s ease;
+}
+
+/* Dark mode position */
+body.dark-mode .toggle-thumb {
+  transform: translateX(38px);
+}
+
+.theme-toggle:focus-visible .toggle-track {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 3px;
 }
 
 /* Taken from: ChatGPT animation query */
