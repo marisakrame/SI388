@@ -278,7 +278,8 @@ h2 {
 }
 
 /* =========================
-   Theme toggle
+   Theme toggle 
+   (used from ChatGPT prompting, edited colors and padding)
    ========================= */
 
 .theme-toggle {
@@ -340,7 +341,8 @@ body.dark-mode .toggle-thumb {
 }
 
 /* =========================
-   High contrast toggle
+   High contrast toggle 
+   (used from ChatGPT prompting, edited colors, padding, cursor)
    ========================= */
 
 #contrast-toggle {
@@ -356,10 +358,12 @@ body.dark-mode .toggle-thumb {
   background-color: var(--card-color);
   color: var(--text-color);
   font-weight: bold;
+  cursor: pointer;
 }
 
 /* =========================
-   Animation
+   Animation 
+   (used from ChatGPT prompting)
    ========================= */
 
 @keyframes cardFadeUp {
