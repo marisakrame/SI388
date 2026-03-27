@@ -379,8 +379,11 @@ body.dark-mode .toggle-thumb {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  * {
-    animation: none !important;
-    transition: none !important;
+  .meet-card {
+    animation: none;
+  }
+
+  .toggle-thumb {
+    transition: none;
   }
 }
