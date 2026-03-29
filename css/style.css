@@ -342,7 +342,7 @@ body.dark-mode .toggle-thumb {
 
 /* =========================
    High contrast toggle 
-   (used from ChatGPT prompting, edited colors, padding, cursor)
+   (used from ChatGPT prompting, edited colors, padding, cursor type)
    ========================= */
 
 #contrast-toggle {
@@ -363,7 +363,7 @@ body.dark-mode .toggle-thumb {
 
 /* =========================
    Animation 
-   (used from ChatGPT prompting)
+   (Consulted from ChatGPT prompting)
    ========================= */
 
 @keyframes cardFadeUp {
