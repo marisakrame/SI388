@@ -6,10 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Athlete Profile</title>
   <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/mobile_style.css">
+  <link rel="stylesheet" href="./css/desktop_style.css">
 </head>
 
-<body>
+<body class="dark-mode">
 
   <header> 
     <h1>Athlete Information</h1>
@@ -30,20 +31,24 @@
       </div>
     </div>
 
-    <div class="bio">
-      <h2>⭐ About</h2>
-      <p>Garrett is a junior on the skyline xc team. After a mediocre freshman year and a devestating season lasting injury his sophmore year, Garrett was more determended than ever to run well. He was one of the most consistant runners on the team getting that top 7 spot on the team every single race. He excelled in not just running but motivating, by always leading cheers and getting everyone hyped up while still staying positive. His favroite memories of the team was being at camp with everyone and playing games all day while still being full of energy. His favroite race was at holly when their team placed first and went up on stage togerther with a big trophie.</p>
-    </div>
+  <!-- About and awards stay stacked on mobile.
+  This wrapper lets them become a 2-column grid on larger screens. -->
+<section class="bio-grid">
+  <div class="bio">
+    <h2>⭐ About</h2>
+    <p>Garrett is a junior on the skyline xc team. After a mediocre freshman year and a devestating season lasting injury his sophmore year, Garrett was more determended than ever to run well. He was one of the most consistant runners on the team getting that top 7 spot on the team every single race. He excelled in not just running but motivating, by always leading cheers and getting everyone hyped up while still staying positive. His favroite memories of the team was being at camp with everyone and playing games all day while still being full of energy. His favroite race was at holly when their team placed first and went up on stage togerther with a big trophie.</p>
+  </div>
 
-    <div class="bio">
-      <h2>🏅 Awards</h2>
-      <div class="tag-layout">
-        <p>DeWitt Invitational Team Champions/2024</p>
-        <p>Coaches award</p>
-        <p>Top 50 medal at Portage</p>
-        <p>Holly Team Winner</p>
-      </div>
+  <div class="bio">
+    <h2>🏅 Awards</h2>
+    <div class="tag-layout">
+      <p>DeWitt Invitational Team Champions/2024</p>
+      <p>Coaches award</p>
+      <p>Top 50 medal at Portage</p>
+      <p>Holly Team Winner</p>
     </div>
+  </div>
+</section>
 
     <section id="meets" class="meets" aria-labelledby="meets-title">
 
@@ -562,12 +567,10 @@
     </section>
   </main>
 
-  <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle light and dark mode" aria-pressed="false">
-    <span class="toggle-track">
-      <span class="toggle-option sun" aria-hidden="true">Light ☀️</span>
-      <span class="toggle-option moon" aria-hidden="true">Dark 🌙</span>
-      <span class="toggle-thumb"></span>
-    </span>
+  <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle light and dark mode">
+    <span class="toggle-thumb"></span>
+    <span class="toggle-label light-label">Light</span>
+    <span class="toggle-label dark-label">Dark</span>
   </button>
 
   <button id="contrast-toggle" type="button">High Contrast</button>
@@ -665,30 +668,16 @@
 </script>
 
 <script>
-  const themeToggle = document.getElementById("theme-toggle");
+  const toggleButton = document.getElementById("theme-toggle");
+  const body = document.body;
 
-  function setTheme(mode) {
-    document.body.classList.remove("light-mode", "dark-mode");
-    document.body.classList.add(mode);
-    themeToggle.setAttribute("aria-pressed", mode === "dark-mode" ? "true" : "false");
-    localStorage.setItem("theme", mode);
-  }
-
-  const savedTheme = localStorage.getItem("theme");
-
-  if (savedTheme === "dark-mode" || savedTheme === "light-mode") {
-    setTheme(savedTheme);
-  } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-    setTheme("dark-mode");
-  } else {
-    setTheme("light-mode");
-  }
-
-  themeToggle.addEventListener("click", function () {
-    if (document.body.classList.contains("dark-mode")) {
-      setTheme("light-mode");
+  toggleButton.addEventListener("click", function () {
+    if (body.classList.contains("dark-mode")) {
+      body.classList.remove("dark-mode");
+      body.classList.add("light-mode");
     } else {
-      setTheme("dark-mode");
+      body.classList.remove("light-mode");
+      body.classList.add("dark-mode");
     }
   });
 </script>

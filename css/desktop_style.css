@@ -1,0 +1,36 @@
+/* Desktop layout only */
+.bio-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media screen and (min-width: 1024px) {
+  header,
+  main {
+    max-width: 1200px; 
+    padding: 24px;
+  }
+
+  .sticky-header figure {
+    width: 130px;
+    flex-shrink: 0;
+  }
+
+  .photo {
+    width: 130px;
+    height: 130px;
+  }
+
+  .bio-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .meet-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .viz-area {
+    min-height: 360px;
+  }
+}
