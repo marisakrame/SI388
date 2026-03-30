@@ -119,6 +119,10 @@ h1 {
 }
 
 h2 {
+  font-size: 20px;
+}
+
+h3 {
   font-size: 18px;
 }
 
@@ -203,7 +207,6 @@ h2 {
 .meets h2 {
   margin-bottom: 16px;
   padding-bottom: 8px;
-  font-size: 22px;
   border-bottom: 2px solid var(--accent-color);
 }
 
@@ -227,10 +230,6 @@ h2 {
 
   transform: translateY(20px);
   animation: cardFadeUp 0.6s ease forwards;
-}
-
-.meet-card h3 {
-  font-size: 18px;
 }
 
 .spacer {
