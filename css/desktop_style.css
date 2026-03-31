@@ -1,9 +1,4 @@
 /* Desktop layout only */
-.bio-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
-}
 
 @media screen and (min-width: 1000px) {
   header,
